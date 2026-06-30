@@ -1,0 +1,214 @@
+/* ==========================================================================
+   1. VARIABLES GLOBALES Y CONFIGURACIÓN (CSS FUNDACIONAL)
+   ========================================================================== */
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --dark-color: #1e293b;
+    --light-color: #f8fafc;
+    --text-color: #334155;
+    --white: #ffffff;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.bg-light {
+    background-color: var(--light-color);
+}
+
+.text-center {
+    text-center: center;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--dark-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   2. COMPONENTES INTERACTIVOS (EFECTOS HOVER Y BOTONES)
+   ========================================================================== */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: var(--transition);
+}
+
+.btn-sm:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* Encabezado */
+header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+/* ==========================================================================
+   3. MEJORAS VISUALES (DISEÑO PULIDO)
+   ========================================================================== */
+.grid-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #e2e8f0;
+    color: var(--dark-color);
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-right: 8px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    cursor: help; /* Tooltip visual */
+}
+
+/* Cuadrícula de Proyectos */
+.grid-projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+footer {
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* ==========================================================================
+   4. DISEÑO ADAPTABLE (RESPONSIVE DESIGN)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    .header-flex {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .grid-projects {
+        grid-template-columns: 1fr; /* Pasa de 2 columnas a 1 sola en móviles */
+    }
+}
